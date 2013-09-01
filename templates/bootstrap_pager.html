@@ -1,0 +1,9 @@
+{% load url_tags %}
+<ul class="pager">
+  <li class="{{ previous_class }}{% if not page_object.has_previous %} disabled{% endif %}">
+      <a href="{% add_qs_param absolute_uri 'page' page_object.previous_page_number %}">Previous</a>
+  </li>
+  <li class="{{ next_class }}{% if not page_object.has_next %} disabled{% endif %}">
+      <a href="{% add_qs_param absolute_uri 'page' page_object.next_page_number %}">Next</a>
+  </li>
+</ul>

@@ -1,0 +1,17 @@
+{% if errors_list %}
+    <div class="alert alert-block alert-error">
+
+        {% if icon_remove_class %}
+            <button type="button" class="close" data-dismiss="alert">
+                <i class="{{ icon_remove_class }}"></i>
+            </button>
+        {% endif %}
+
+        <ul>
+            {% for error in errors_list %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+{% endif %}

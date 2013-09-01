@@ -1,0 +1,20 @@
+{% load url_tags %}
+<div class="pagination {% if pagination_class %}{{ pagination_class }}{% endif %}">
+    <ul>
+        {% if page_object.has_previous %}
+            <li>
+                <a href="{% add_qs_param absolute_uri 'page' page_object.previous_page_number %}">Prev</a>
+            </li>
+        {% endif %}
+
+        {% for page in page_object.paginator.page_range %}
+            <li {% if page == page_object.number %}class="active"{% endif %}>
+                <a href="{% add_qs_param absolute_uri 'page' page %}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_object.has_next %}
+            <li><a href="{% add_qs_param absolute_uri 'page' page_object.next_page_number %}">Next</a></li>
+        {% endif %}
+    </ul>
+</div>
