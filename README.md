@@ -4,7 +4,7 @@ Django bootstrap helpers
 
 Django bootstrap helpers is a collection of template tags for rendering bootstrap based components.
 Also app use 'django-urltags' plugin for url generation.
-Twitter bootstrap framework twitter bootstrap must be connected.
+Twitter bootstrap framework must be connected.
 
 
 bootstrap_form_errors
